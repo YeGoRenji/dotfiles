@@ -1,0 +1,8 @@
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+
+
+[env]
+WINIT_X11_SCALE_FACTOR = "1.57"

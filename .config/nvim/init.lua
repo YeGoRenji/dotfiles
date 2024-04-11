@@ -1,0 +1,5 @@
+require "myConf.options"
+require "myConf.keymaps"
+require "myConf.plugins"
+require "myConf.colorscheme"
+require "myConf.cmp"

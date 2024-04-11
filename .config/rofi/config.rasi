@@ -1,0 +1,4 @@
+@theme "/home/yego/.local/share/rofi/themes/rounded-orange-dark.rasi"
+configuration {               
+  modes: "window,run,ssh,drun,calc";
+}
