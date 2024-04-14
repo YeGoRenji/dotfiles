@@ -227,3 +227,4 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh &
 exec_always --no-startup-id sxhkd &
 exec_always --no-startup-id nm-applet &
 exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/FlatSkyArt.jpg
+exec_always autotiling -w 1 3 5 7 9

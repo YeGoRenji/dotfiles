@@ -2,7 +2,11 @@
 family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
-
-
 [env]
 WINIT_X11_SCALE_FACTOR = "1.57"
+
+[window]
+opacity = 0.8
+
+[colors.primary]
+background = '#101012'
