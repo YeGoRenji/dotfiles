@@ -4,6 +4,7 @@
 
 ### Variables for settings (This makes changing them WAY easyer!) ###
 set $mod                             Mod4
+#set $mod                             Mod1
 set $smod                            Shift
 
 set $wm_setting_font                 pango:JetBrainsMono Nerd Font Mono, Regular 11
