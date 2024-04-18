@@ -32,6 +32,8 @@ export PATH="$PATH:$HOME/.local/bin"
 
 # Aliases
 alias vim="nvim"
+alias i3conf="vim ~/.config/i3/config"
+alias polybarconf="vim ~/.config/polybar/config.ini"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
