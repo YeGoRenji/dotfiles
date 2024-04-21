@@ -6,6 +6,7 @@ local keymap = vim.api.nvim_set_keymap
 if vim.g.neovide then
 	local change_scale_factor = function(delta)
 		vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
+		print("New scale is " .. vim.g.neovide_scale_factor)
 	end
 	vim.keymap.set("n", "<C-=>", function()
 		change_scale_factor(1.25)

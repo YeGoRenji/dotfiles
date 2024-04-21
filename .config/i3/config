@@ -228,8 +228,19 @@ bindsym $mod+$smod+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $mod+l exec bash ~/.config/i3/i3lock-solarized-dark.sh
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
+
+# Shortcuts listener
 exec_always --no-startup-id sxhkd &
+
+# NetworkManager tray client
 exec_always --no-startup-id nm-applet &
+
+# Background picture
 exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/FlatSkyArt.jpg
+
+# Lock screen when computer sleeps / lid closes
+exec_always --no-startup-id xss-lock -- ~/.config/i3/i3lock-solarized-dark.sh
+
+# Autotiling
 exec_always autotiling -w 1 3 5 7 9
 
