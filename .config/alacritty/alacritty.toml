@@ -6,7 +6,7 @@ style = "Regular"
 WINIT_X11_SCALE_FACTOR = "1.57"
 
 [window]
-opacity = 0.8
+opacity = 0.5
 
 [colors.primary]
 background = '#101012'

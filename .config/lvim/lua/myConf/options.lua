@@ -20,7 +20,7 @@ lvim.transparent_window = true
 vim.lsp.set_log_level("OFF")
 
 if vim.g.neovide then
-	vim.g.neovide_scale_factor = 0.4
+	vim.g.neovide_scale_factor = 0.5
 
 	-- Background blur
 	vim.g.neovide_window_blurred = true

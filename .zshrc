@@ -29,13 +29,24 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 export PATH="$PATH:$HOME/Applications/app-links"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.fly/bin"
+export CURSUS="$HOME/1337"
 
 # Aliases
 alias vim="nvim"
 alias i3conf="vim ~/.config/i3/config"
 alias polybarconf="vim ~/.config/polybar/config.ini"
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+alias lab='mkdir /tmp/lab &> /dev/null; cd /tmp/lab'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [[ ! -f /usr/share/nvm/init-nvm.sh ]] || source /usr/share/nvm/init-nvm.sh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/yego/google-cloud-sdk/google-cloud-sdk/path.zsh.inc' ]; then . '/home/yego/google-cloud-sdk/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/yego/google-cloud-sdk/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/yego/google-cloud-sdk/google-cloud-sdk/completion.zsh.inc'; fi

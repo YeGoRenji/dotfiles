@@ -62,7 +62,7 @@ bindsym $mod+$smod+Return exec $wm_setting_app_browser
 bindsym $mod+space exec $wm_setting_app_launcher
 
 # Start discord
-bindsym $mod+$smod+d exec discord
+bindsym $mod+$smod+d exec flatpak run com.discordapp.Discord
 
 
 # Run a window compositor (for effects like transparency or full VSync)
@@ -167,7 +167,7 @@ client.urgent           $wm_color_border_inactive_bg $wm_color_border_inactive_b
 client.placeholder      $wm_color_border_inactive_bg $wm_color_border_inactive_bg $wm_color_border_inactive_fg $wm_color_border_inactive_bg $wm_color_border_inactive_bg
 client.background       $wm_color_background
 
-exec $bar_setting_statusCommand
+exec --no-startup-id $bar_setting_statusCommand
 
 ### i3bar ###
 ##bar {
@@ -227,10 +227,23 @@ bindsym $mod+$smod+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # Lock screen using i3lock-color theme i3lock-solarized-dark
 bindsym $mod+l exec bash ~/.config/i3/i3lock-solarized-dark.sh
 
+# Media Keys
+bindsym XF86MonBrightnessDown exec brillo -q -U 3 -u 150000
+bindsym XF86MonBrightnessUp exec brillo -q -A 3 -u 150000
+bindsym XF86AudioMute exec pulseaudio-ctl mute
+bindsym XF86AudioLowerVolume exec pulseaudio-ctl down
+bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up
+
+# Print screen
+bindsym Print exec flameshot gui
+
+# TurnOff screen
+bindsym $mod+$smod+l exec xset dpms force off
+
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
-# Shortcuts listener
-exec_always --no-startup-id sxhkd &
+# Keyboard layout switch
+exec_always --no-startup-id setxkbmap "us,ara" -option grp:alt_shift_toggle
 
 # NetworkManager tray client
 exec_always --no-startup-id nm-applet &
@@ -242,5 +255,5 @@ exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/FlatSkyArt.jpg
 exec_always --no-startup-id xss-lock -- ~/.config/i3/i3lock-solarized-dark.sh
 
 # Autotiling
-exec_always autotiling -w 1 3 5 7 9
+exec_always --no-startup-id autotiling -w 1 3 5 7 9
 
