@@ -6,4 +6,4 @@
 reload("myConf.plugins")
 reload("myConf.keybinds")
 reload("myConf.options")
--- reload("myConf.c_cpp_starter")
+reload("myConf.c_cpp_starter")

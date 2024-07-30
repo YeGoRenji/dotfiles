@@ -20,7 +20,7 @@ set $wm_setting_key_right            Right
 set $wm_setting_app_terminal         alacritty
 set $wm_setting_app_browser          firefox-developer-edition
 set $wm_setting_app_launcher         rofi -show drun -show-icons
-set $wm_setting_app_compositor       picom
+set $wm_setting_app_compositor       picom -b
 
 #old 81A1C1
 set $wm_color_border_active_bg       #FF8025
@@ -234,6 +234,10 @@ bindsym XF86AudioMute exec pulseaudio-ctl mute
 bindsym XF86AudioLowerVolume exec pulseaudio-ctl down
 bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up
 
+# Scratchpad
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show 
+
 # Print screen
 bindsym Print exec flameshot gui
 
@@ -257,3 +261,11 @@ exec_always --no-startup-id xss-lock -- ~/.config/i3/i3lock-solarized-dark.sh
 # Autotiling
 exec_always --no-startup-id autotiling -w 1 3 5 7 9
 
+# Windows that are floating by default (Popups basically)
+for_window [window_role="pop-up"]                       floating enable
+for_window [window_role="bubble"]                       floating enable 
+for_window [window_role="task_dialog"]                  floating enable
+for_window [window_role="Preferences"]                  floating enable
+for_window [window_type="dialog"]                       floating enable 
+for_window [window_type="menu"]                         floating enable
+for_window [title="^Sign in – Google accounts.*"]       floating enable

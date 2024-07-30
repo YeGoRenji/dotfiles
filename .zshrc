@@ -40,6 +40,10 @@ alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias lab='mkdir /tmp/lab &> /dev/null; cd /tmp/lab'
 
+cpcompile() {
+	g++ $1 -std=c++20 -O2 -Wall
+}
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -50,3 +54,5 @@ if [ -f '/home/yego/google-cloud-sdk/google-cloud-sdk/path.zsh.inc' ]; then . '/
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/yego/google-cloud-sdk/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/yego/google-cloud-sdk/google-cloud-sdk/completion.zsh.inc'; fi
+
+PATH=~/.console-ninja/.bin:$PATH
