@@ -1,5 +1,7 @@
-require "myConf.options"
-require "myConf.keymaps"
-require "myConf.plugins"
-require "myConf.colorscheme"
-require "myConf.cmp"
+require("config.lazy")
+
+require("config.keymaps")
+
+require("config.autocmd")
+
+require("config.options")
