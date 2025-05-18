@@ -80,7 +80,7 @@ set $ws6  "  6  "
 set $ws7  "  7  "
 set $ws8  "  8  "
 set $ws9  "  9  "
-set $ws10 "  10 "
+set $ws10 " 10 "
 
 # Switch to workspace n
 bindsym $mod+1 workspace $ws1
@@ -246,8 +246,9 @@ bindsym $mod+$smod+l exec xset dpms force off
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
-# Keyboard layout switch
-exec_always --no-startup-id setxkbmap "us,ara" -option grp:alt_shift_toggle
+# Keyboard layout switch (Disabled cause it stops all alt_shift alternatives)
+# exec_always --no-startup-id setxkbmap "us,ara" -option grp:alt_shift_toggle
+exec_always --no-startup-id setxkbmap "us,ara"
 
 # NetworkManager tray client
 exec_always --no-startup-id nm-applet &

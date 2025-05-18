@@ -14,7 +14,8 @@ plug "zsh-users/zsh-syntax-highlighting"
 plug "romkatv/powerlevel10k"
 
 # Load and initialise completion system
-autoload -Uz compinit
+fpath=(~/.docker/completions \\$fpath)
+autoload -U compinit
 compinit
 
 # Up down prefix search
@@ -31,6 +32,7 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.fly/bin"
 export CURSUS="$HOME/1337"
+export JAVA_HOME="$HOME/.jdks/corretto-21.0.2"
 
 # Aliases
 alias vim="nvim"
@@ -39,6 +41,10 @@ alias polybarconf="vim ~/.config/polybar/config.ini"
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias lab='mkdir /tmp/lab &> /dev/null; cd /tmp/lab'
+alias zshrc='vim ~/.zshrc'
+alias startDocker='sudo systemctl start docker.service'
+alias startSshd='sudo systemctl start sshd'
+alias open='xdg-open'
 
 cpcompile() {
 	g++ $1 -std=c++20 -O2 -Wall
@@ -55,4 +61,3 @@ if [ -f '/home/yego/google-cloud-sdk/google-cloud-sdk/path.zsh.inc' ]; then . '/
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/yego/google-cloud-sdk/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/yego/google-cloud-sdk/google-cloud-sdk/completion.zsh.inc'; fi
 
-PATH=~/.console-ninja/.bin:$PATH
